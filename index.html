@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vento - Browser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-image"></div>
+    <button id="fullscreen-btn">⛶</button>
+    
+    <main class="container">
+        <div class="lado-izquierdo">
+            <header>
+                <h2 id="reloj">00:00</h2>
+                <p id="fecha">Cargando...</p>
+                <h1>Google</h1>
+            </header>
+
+            <div class="search-box">
+                <form action="https://www.google.com/search" method="GET">
+                    <input type="text" name="q" placeholder="Buscar en Google..." autofocus>
+                </form>
+            </div>
+
+            <div class="links-grid">
+                <a href="https://youtube.com" class="card" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?sz=64&domain=youtube.com" alt="YT">
+                    <span>YouTube</span>
+                </a>
+                <a href="https://kick.com" class="card" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?sz=64&domain=kick.com" alt="GH">
+                    <span>Kick</span>
+                </a>
+                <a href="https://anime-latino.com" class="card" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?sz=64&domain=anime-latino.com" alt="RB">
+                    <span>Anime Gratis</span>
+                </a>
+                <a href="https://gemini.google.com" class="card" target="_blank">
+                    <img src="https://www.google.com/s2/favicons?sz=64&domain=gemini.google.com" alt="AI">
+                    <span>Gemini</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="lado-derecho">
+            <section class="news-section">
+                <h3>🔥 Tendencias de Anime Audio Latino</h3>
+                <div id="anime-news" class="news-scroll">
+                    <p>Cargando...</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

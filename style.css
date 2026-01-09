@@ -1,0 +1,88 @@
+* { box-sizing: border-box; }
+
+body {
+    margin: 0; padding: 0;
+    width: 100vw; height: 100vh;
+    display: flex; justify-content: center; align-items: center;
+    font-family: 'Segoe UI', sans-serif; color: white;
+}
+
+.background-image {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background: url('fondo.jpg') no-repeat center center/cover;
+    filter: brightness(0.5);
+}
+
+/* --- CONTAINER CENTRAL MÁS PEQUEÑO Y CENTRADO --- */
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px);
+    
+    width: calc(100% - 10px); /* Ajuste para el margen de 5px a cada lado */
+    max-width: 900px; /* Más pequeño que el anterior */
+    margin: 5px; /* Margen externo solicitado */
+    padding: 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+@media (min-width: 850px) {
+    .container { flex-direction: row; }
+    .lado-izquierdo { flex: 1; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 20px; }
+    .lado-derecho { flex: 1.2; }
+}
+
+/* --- FAVORITOS MÁS PEQUEÑOS --- */
+header h1 { margin: 0; color: #df380e; font-size: 3rem; text-align: center; }
+header p{ margin: 2px 0 15px; font-size: 0.85rem; text-align: center; opacity: 0.7; }
+header h2{ text-align: center; opacity: 0.7; }
+
+.search-box input {
+    width: 100%; padding: 10px 20px; border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1); color: white;
+    border: 1px solid rgba(255,255,255,0.1); outline: none; margin-bottom: 20px;
+}
+
+.links-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.card {
+    height: 80px; /* Tamaño fijo más pequeño */
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-decoration: none; color: white; font-size: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.2s;
+}
+
+.card img { width: 28px; height: 28px; margin-bottom: 5px; }
+.card:hover { background: #ff9900; color: black; transform: scale(1.03); }
+
+/* --- NOTICIAS --- */
+.news-section h3 { color: #ff9900; font-size: 0.8rem; margin-top: 0; text-transform: uppercase; }
+.news-scroll { max-height: 300px; overflow-y: auto; padding-right: 8px; }
+
+.anime-item {
+    display: flex; align-items: center; padding: 10px;
+    background: rgba(0, 0, 0, 0.25); margin-bottom: 8px;
+    border-radius: 12px; gap: 12px; cursor: pointer;
+}
+
+.anime-item img { width: 40px; height: 55px; border-radius: 6px; object-fit: cover; }
+.anime-info h4 { margin: 0; font-size: 0.9rem; }
+.anime-info span { color: #00ff99; font-size: 0.75rem; }
+
+/* Otros */
+#fullscreen-btn { position: fixed; top: 10px; right: 10px; background: rgba(255,255,255,0.1); border: none; color: white; padding: 8px; border-radius: 50%; cursor: pointer; }
+.news-scroll::-webkit-scrollbar { width: 3px; }
+.news-scroll::-webkit-scrollbar-thumb { background: #ff9900; border-radius: 10px; }
